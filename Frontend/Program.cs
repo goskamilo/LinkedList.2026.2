@@ -53,7 +53,7 @@ do
             }
             break;
         case "9":
-            list.Clear();
+            list.Clear(); 
             Console.WriteLine("Remove all dates");
             break;
     }
