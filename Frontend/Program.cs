@@ -13,17 +13,20 @@ do
             list.Add(Console.ReadLine()!);
             break;
         case "2":
-            Console.Write("Enter value: ");
-            list.InsertAtEnd(Console.ReadLine()!);
+            Console.WriteLine(list.ToStringForward());
             break;
         case "3":
-            Console.Write("Enter value: ");
-            var itemToSearch = Console.ReadLine()!;
-            Console.WriteLine(list.Contains(itemToSearch) 
-                ? $"The item: '{itemToSearch}' exists!" 
-                : $"The item: '{itemToSearch}' doesn't exists!");
+            Console.WriteLine(list.ToStringReverse());
             break;
         case "4":
+            list.OrderDescending();
+            Console.WriteLine("List ordered in descending order.");
+            break;
+        //case "5": 
+            list.PrintMode();
+            
+
+        case "4*":
             Console.Write("Enter value: ");
             var itemToRemove = Console.ReadLine()!;
             if (!list.Contains(itemToRemove))
@@ -49,10 +52,11 @@ do
 string Menu()
 {
     Console.WriteLine("1. TO ADD");
-    Console.WriteLine("2. Insert at end.");
-    Console.WriteLine("3. Contains.");
-    Console.WriteLine("4. Remove."); 
-    Console.WriteLine("5. Reverse."); // Homework!
+    Console.WriteLine("2. Show Forward list.");
+    Console.WriteLine("3. Show Reverse list.");
+    Console.WriteLine("4. Order Descending.");
+    //Console.WriteLine("4. Remove."); 
+    Console.WriteLine("5. mode"); // Homework!
     Console.WriteLine("6. Insert."); // Homework! ask for item to insert and ask for previous item
     Console.WriteLine("7. Order."); // Homework! order alphabetically
     Console.WriteLine("8. Show list.");
