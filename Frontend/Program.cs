@@ -66,11 +66,11 @@ string Menu()
     Console.WriteLine("3. Show Reverse list.");
     Console.WriteLine("4. Order Descending.");
     Console.WriteLine("4. Remove."); 
-    Console.WriteLine("5. mode"); // Homework!
-    Console.WriteLine("6. Graphis"); // Homework! ask for item to insert and ask for previous item
-    Console.WriteLine("7. Exist"); // Homework! order alphabetically
+    Console.WriteLine("5. mode"); 
+    Console.WriteLine("6. Graphis"); 
+    Console.WriteLine("7. Exist"); 
     Console.WriteLine("8. Remove first occurrence.");
-    Console.WriteLine("9. Show reverse list.");
+    Console.WriteLine("9. Remove All.");
     Console.WriteLine("0. Exit.");
     Console.Write("Enter your option? ");
     return Console.ReadLine()!;

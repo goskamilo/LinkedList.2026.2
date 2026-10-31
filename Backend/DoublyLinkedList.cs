@@ -5,22 +5,7 @@ public class DoublyLinkedList<T> where T : IComparable<T>
     private DoubleNode<T>? _head;
     private DoubleNode<T>? _tail;
     private bool _isDescending;
-    public bool IsDescending { get; set; }   
-
-    /*   public void InsertAtBeginning(T data)
-{
-var newNode = new DoubleNode<T>(data);
-if (_head == null)
-{
-_head = newNode;
-_tail = newNode;
-_isDescending = false;
-return;
-}
-newNode.Next = _head;
-_head.Prev = newNode;
-_head = newNode;
-}*/
+    public bool IsDescending { get; set; }  
     public void Add(T data)
     {
         var newNode = new DoubleNode<T>(data);
@@ -226,22 +211,22 @@ _head = newNode;
     }
     public T? RemoveFirst()
     {
-        if (_head == null) return default; // Retorna el valor por defecto (ej. null o 0) si la lista está vacía
+        if (_head == null) return default; //Returns the default value (e.g., null or 0) if the list is empty
 
-        var removedData = _head.Data; // Almacena el valor antes de eliminar el nodo
+        var removedData = _head.Data; // Store the value before deleting the node
 
-        if (_head.Next == null) // Solo hay un elemento en la lista
+        if (_head.Next == null) // There is only one item on the list
         {
             _head = null;
             _tail = null;
         }
-        else // Hay más de un elemento
+        else // There is more than one element
         {
             _head = _head.Next;
             _head!.Prev = null;
         }
 
-        return removedData; // Retorna el valor que fue eliminado
+        return removedData; // Returns the value that was removed
     }
     public void Clear()
     {
