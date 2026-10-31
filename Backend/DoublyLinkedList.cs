@@ -243,7 +243,11 @@ _head = newNode;
 
         return removedData; // Retorna el valor que fue eliminado
     }
-
+    public void Clear()
+    {
+        _head = null;
+        _tail = null;
+    }
 
 
 }

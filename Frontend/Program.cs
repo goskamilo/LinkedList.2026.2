@@ -41,18 +41,6 @@ do
             }
 
             break;
-
-        /*case "4*":
-            Console.Write("Enter value: ");
-            var itemToRemove = Console.ReadLine()!;
-            if (!list.Contains(itemToRemove))
-            {
-                Console.WriteLine($"Item: ´{itemToRemove}´ not exists in the list.");
-                break;
-            }
-            list.Remove(itemToRemove);
-            Console.WriteLine($"Item: ´{itemToRemove}´ removed.");
-            break;*/
         case "8":
             var datoEliminado = list.RemoveFirst();
             if (datoEliminado != null && !datoEliminado.Equals(default))
@@ -63,6 +51,10 @@ do
             {
                 Console.WriteLine("La lista está vacía, no hay elementos para eliminar.");
             }
+            break;
+        case "9":
+            list.Clear();
+            Console.WriteLine("Remove all dates");
             break;
     }
 } while (option != "0");
