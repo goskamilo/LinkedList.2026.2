@@ -179,9 +179,9 @@ _head = newNode;
 
         _isDescending = !_isDescending;
     }
-    public void PrintModes()
+    public string GetModes()
     {
-        if (_head == null) return;
+        if (_head == null) return string.Empty;
 
         var frequencies = GetFrequencies();
         int maxFreq = frequencies.Values.Max();
@@ -189,10 +189,9 @@ _head = newNode;
         var modes = frequencies.Where(kvp => kvp.Value == maxFreq).Select(kvp => kvp.Key.ToString());
 
         if (modes.Count() == 1)
-            Console.WriteLine($"La moda es {modes.First()}.");
+            return $"La moda es {modes.First()}.";
         else
-            Console.WriteLine($"Las modas son {string.Join(" y ", modes)}.");
-    
+            return $"Las modas son {string.Join(" y ", modes)}.";
     }
     private Dictionary<T, int> GetFrequencies()
     {
@@ -209,4 +208,42 @@ _head = newNode;
         }
         return frequencies;
     }
+    public List<string> GetGraph()
+    {
+        var graphLines = new List<string>();
+        if (_head == null) return graphLines;
+
+        var frequencies = GetFrequencies();
+        var keys = frequencies.Keys.ToList();
+        keys.Sort();
+
+        foreach (var key in keys)
+        {
+            graphLines.Add($"{key} {new string('*', frequencies[key])}");
+        }
+
+        return graphLines;
+    }
+    public T? RemoveFirst()
+    {
+        if (_head == null) return default; // Retorna el valor por defecto (ej. null o 0) si la lista está vacía
+
+        var removedData = _head.Data; // Almacena el valor antes de eliminar el nodo
+
+        if (_head.Next == null) // Solo hay un elemento en la lista
+        {
+            _head = null;
+            _tail = null;
+        }
+        else // Hay más de un elemento
+        {
+            _head = _head.Next;
+            _head!.Prev = null;
+        }
+
+        return removedData; // Retorna el valor que fue eliminado
+    }
+
+
+
 }
