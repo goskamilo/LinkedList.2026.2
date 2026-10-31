@@ -10,7 +10,7 @@ do
     {
         case "1":
             Console.Write("Enter value: ");
-            list.InsertAtBeginning(Console.ReadLine()!);
+            list.Add(Console.ReadLine()!);
             break;
         case "2":
             Console.Write("Enter value: ");
@@ -48,7 +48,7 @@ do
 
 string Menu()
 {
-    Console.WriteLine("1. Insert at beginning.");
+    Console.WriteLine("1. TO ADD");
     Console.WriteLine("2. Insert at end.");
     Console.WriteLine("3. Contains.");
     Console.WriteLine("4. Remove."); 
